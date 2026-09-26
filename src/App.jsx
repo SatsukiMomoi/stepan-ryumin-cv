@@ -237,6 +237,7 @@ function Content({ t, lang, ready }) {
               <p className="job-role">{j.role}</p>
               <p className="job-about">{j.about}</p>
               <ul className="job-points">{j.points.map((p) => <li key={p}>{p}</li>)}</ul>
+              {j.more && <button type="button" className="job-more" onClick={() => document.dispatchEvent(new CustomEvent('goto', { detail: 3 }))}>{j.more}</button>}
               {j.facts && (
                 <>
                   <dl className="facts">
@@ -264,6 +265,7 @@ function Content({ t, lang, ready }) {
                   <p className="card-kind">{p.kind}</p>
                   <h3 className="card-name">{p.name}</h3>
                   <p className="card-d">{p.d}</p>
+                  {p.r && <p className="card-r">{p.r}</p>}
                   <ul className="card-stack">{p.stack.map((s) => <li key={s}>{s}</li>)}</ul>
                 </div>
               </article>
@@ -276,6 +278,11 @@ function Content({ t, lang, ready }) {
       <section className="st" data-station="4" id="st-4">
         <div className="panel">
           <StationHead i={4} title={t.skills.title} />
+          <h3 className="skill-sub skill-sub-ai">{t.skills.aiTitle}</h3>
+          <dl className="skill-list skill-list-ai">
+            {t.skills.ai.map((g) => <div className="skill-row" key={g.g}><dt>{g.g}</dt><dd>{g.i}</dd></div>)}
+          </dl>
+          <h3 className="skill-sub">{t.skills.engTitle}</h3>
           <dl className="skill-list">
             {t.skills.groups.map((g) => <div className="skill-row" key={g.g}><dt>{g.g}</dt><dd>{g.i}</dd></div>)}
           </dl>
@@ -426,6 +433,13 @@ export default function App() {
     if (lenisRef.current) lenisRef.current.scrollTo(y, { duration: 2.2, easing: (x) => 1 - Math.pow(1 - x, 3) })
     else scrollTo(0, y)
   }
+  const goToRef = useRef(goTo)
+  goToRef.current = goTo
+  useEffect(() => {
+    const on = (e) => goToRef.current(e.detail)
+    document.addEventListener('goto', on)
+    return () => document.removeEventListener('goto', on)
+  }, [])
 
   return (
     <>

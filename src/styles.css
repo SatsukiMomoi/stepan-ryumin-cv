@@ -253,3 +253,13 @@ main { position: relative; z-index: 3; }
 .sweep-band { position: absolute; top: 0; bottom: 0; left: calc(var(--period) * -1); width: calc(100% + var(--period) * 3); will-change: transform;
   background: repeating-linear-gradient(104deg, transparent 0, transparent calc(var(--period) * 0.3), var(--sw, rgba(255,210,160,.2)) calc(var(--period) * 0.44), transparent calc(var(--period) * 0.6), transparent var(--period)); }
 @media (prefers-reduced-motion: reduce) { .sweep { display: none; } }
+
+/* кейсы: результат, переход из опыта, блок AI */
+.card-r { margin-top: 10px; padding-left: 12px; border-left: 2px solid var(--shu); font-size: 14px; color: #16181f; font-weight: 500; }
+.job-more { margin-top: 18px; font-size: 14px; font-weight: 600; color: var(--led); border-bottom: 1px solid rgba(255,174,61,.4); padding-bottom: 2px; transition: border-color .3s; }
+.job-more:hover { border-color: var(--led); }
+.skill-sub { font-family: var(--display); font-weight: 500; font-size: 26px; margin: 8px 0 10px; color: var(--gofun-dim); }
+.skill-sub-ai { color: var(--led); }
+.skill-list + .skill-sub { margin-top: 40px; }
+.skill-list-ai .skill-row dt { color: var(--gofun); }
+.skill-list-ai .skill-row dd { color: var(--gofun); }
