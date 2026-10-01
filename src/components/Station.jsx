@@ -248,7 +248,7 @@ const POSTERS = [
     g.fillStyle = '#f1ebdf'; g.fillRect(0, 0, W, H)
     g.fillStyle = '#1b1d22'; g.font = `600 112px ${SERIF}`; g.textAlign = 'left'
     g.fillText('Stepan', 70, 220); g.fillText('Ryumin', 70, 340)
-    g.fillStyle = '#6b665c'; g.font = `500 34px ${SANS}`; g.fillText('Philologist × AI engineer', 74, 420)
+    g.fillStyle = '#6b665c'; g.font = `500 34px ${SANS}`; g.fillText('Python · LLM integration', 74, 420)
     g.fillStyle = LINE; g.beginPath(); g.roundRect(W - 250, 120, 170, 170, 22); g.fill()
     g.fillStyle = '#f7efe6'; g.font = `700 64px ${MINCHO}`; g.textAlign = 'center'
     g.fillText('リュ', W - 165, 196); g.fillText('ミン', W - 165, 268)
@@ -277,7 +277,7 @@ const POSTERS = [
     g.fillStyle = '#1d222a'; g.fillRect(0, 0, W, 54)
     ;['#ff5f57', '#febc2e', '#28c840'].forEach((c, k) => { g.fillStyle = c; g.beginPath(); g.arc(40 + k * 34, 27, 10, 0, 7); g.fill() })
     const mono = '"SFMono-Regular", Consolas, monospace'
-    const lines = [['> ', 'claude --rag --tools', '#ff9a4a'], ['> ', 'python · sql · pandas', '#7cd992'], ['> ', 'prompts · evals · agents', '#7cc7ff'], ['> ', 'ship it_', '#f2efe8']]
+    const lines = [['> ', 'claude --rag --tools', '#ff9a4a'], ['> ', 'python · sql · pandas', '#7cd992'], ['> ', 'prompts · evals · agents', '#7cc7ff'], ['> ', 'deploy_', '#f2efe8']]
     lines.forEach(([p, s, c], k) => { g.font = `600 44px ${mono}`; g.fillStyle = '#5a6270'; g.fillText(p, 60, 150 + k * 90); g.fillStyle = c; g.fillText(s, 110, 150 + k * 90) })
     g.fillStyle = '#ff9a4a'; g.font = `700 36px ${JP}`; g.textAlign = 'right'; g.fillText('技術', W - 50, H - 40)
   },
@@ -295,7 +295,7 @@ const POSTERS = [
     g.fillStyle = LINE; g.fillRect(0, 0, W, H)
     g.fillStyle = '#fff4ea'; g.font = `700 50px ${JP}`; g.textAlign = 'left'; g.fillText('連絡', 70, 110)
     g.font = `800 104px ${SANS}`; g.fillText('@apetilt', 70, 300)
-    g.font = `500 32px ${SANS}`; g.fillStyle = '#ffd9cf'; g.fillText('Telegram  ·  write any time', 74, 360)
+    g.font = `500 32px ${SANS}`; g.fillStyle = '#ffd9cf'; g.fillText('Telegram', 74, 360)
     const r = rng(9); g.fillStyle = '#fff4ea'
     const x0 = W - 290, y0 = 380
     for (let y = 0; y < 11; y++) for (let x = 0; x < 11; x++) {
